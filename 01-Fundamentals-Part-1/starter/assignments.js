@@ -62,4 +62,21 @@
 // console.log(description);
 
 
-/* */
+/* Assignment 5: Strings and Template Literals */
+
+// const country = "United States";
+// const continent = "North America";
+// const population = 330149796;
+// const language = "English";
+
+// const description = `The ${country} is in ${continent}, and its ${population} people speak ${language}.`
+// console.log(description);
+
+
+/* Assignment 6: If-Else Statements */
+
+const country = "United States";
+const population = 330149796;
+
+if (population > 33000000) console.log(`The ${country}'s population is above average.`);
+else console.log(`${country}'s population is ${33000000 - population} below average.`);
