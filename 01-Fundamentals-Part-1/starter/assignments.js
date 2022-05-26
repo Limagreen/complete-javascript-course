@@ -75,11 +75,11 @@
 
 /* Assignment 6: If-Else Statements */
 
-const country = "United States";
-const population = 330149796;
+// const country = "United States";
+// const population = 330149796;
 
-if (population > 33000000) console.log(`The ${country}'s population is above average.`);
-else console.log(`${country}'s population is ${33000000 - population} below average.`);
+// if (population > 33000000) console.log(`The ${country}'s population is above average.`);
+// else console.log(`${country}'s population is ${33000000 - population} below average.`);
 
 
 /* Assignment 7: Type Conversion and Coercion */
