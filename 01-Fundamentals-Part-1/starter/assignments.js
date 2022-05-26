@@ -80,3 +80,22 @@ const population = 330149796;
 
 if (population > 33000000) console.log(`The ${country}'s population is above average.`);
 else console.log(`${country}'s population is ${33000000 - population} below average.`);
+
+
+/* Assignment 7: Type Conversion and Coercion */
+
+// 1. Predictions
+/* 
+'9' - '5' == 4;
+'19' - '13' + '17' == '617';
+'19' - '13' + 17 == 23;
+'123' < 57 == false;
+5 + 6 + '4' + 9 - 4 - 2 == 1143;
+*/
+
+// 2. Code
+console.log('9' - '5');
+console.log('19' - '13' + '17');
+console.log('19' - '13' + 17);
+console.log('123' < 57);
+console.log(5 + 6 + '4' + 9 - 4 - 2);
