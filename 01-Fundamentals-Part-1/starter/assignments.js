@@ -124,14 +124,42 @@
 
 /* Assignment 9: Logical Operators */
 
-// 3. and 4.
+// // 3. and 4.
 
-// based on the United States
-const country = `United States`;
-const speaksEnglish = true;
-const lessThan50Mil = false;
-const isIsland = false;
+// // based on the United States
+// const country = `United States`;
+// const speaksEnglish = true;
+// const lessThan50Mil = false;
+// const isIsland = false;
 
-if (speaksEnglish && lessThan50Mil && !isIsland) console.log(`You should live in ${country} :)`);
+// if (speaksEnglish && lessThan50Mil && !isIsland) console.log(`You should live in ${country} :)`);
 
-else console.log(`${country} does not meet your criteria :(`);
+// else console.log(`${country} does not meet your criteria :(`);
+
+
+/* Assignment 10: The Switch Statement */
+
+const language = prompt(`Enter your language:`).toLowerCase();
+
+switch (language) {
+
+    case `chinese`:
+    case `mandarin`:
+        console.log(`Greatest number of native speakers!`);
+        break;
+    case `spanish`:
+        console.log(`2nd-most native speakers.`);
+        break;
+    case `english`:
+        console.log(`3rd place`);
+        break;
+    case `hindi`:
+        console.log(`4th place`);
+        break;
+    case `arabic`:
+        console.log(`5th-most spoken language`);
+        break;
+    default:
+        console.log(`Great language too! :D`);
+        break;
+}
