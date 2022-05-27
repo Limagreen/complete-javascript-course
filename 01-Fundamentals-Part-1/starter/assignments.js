@@ -139,27 +139,36 @@
 
 /* Assignment 10: The Switch Statement */
 
-const language = prompt(`Enter your language:`).toLowerCase();
+// const language = prompt(`Enter your language:`).toLowerCase();
 
-switch (language) {
+// switch (language) {
 
-    case `chinese`:
-    case `mandarin`:
-        console.log(`Greatest number of native speakers!`);
-        break;
-    case `spanish`:
-        console.log(`2nd-most native speakers.`);
-        break;
-    case `english`:
-        console.log(`3rd place`);
-        break;
-    case `hindi`:
-        console.log(`4th place`);
-        break;
-    case `arabic`:
-        console.log(`5th-most spoken language`);
-        break;
-    default:
-        console.log(`Great language too! :D`);
-        break;
-}
+//     case `chinese`:
+//     case `mandarin`:
+//         console.log(`Greatest number of native speakers!`);
+//         break;
+//     case `spanish`:
+//         console.log(`2nd-most native speakers.`);
+//         break;
+//     case `english`:
+//         console.log(`3rd place`);
+//         break;
+//     case `hindi`:
+//         console.log(`4th place`);
+//         break;
+//     case `arabic`:
+//         console.log(`5th-most spoken language`);
+//         break;
+//     default:
+//         console.log(`Great language too! :D`);
+//         break;
+// }
+
+
+/* Assignment 11: The Conditional (Ternary) Operator */
+
+const country = "United States";
+const population = 330149796;
+
+population > 33000000 ? console.log(`${country}' population is above average.`) : console.log(`${country}'s population is below average.`);
+
