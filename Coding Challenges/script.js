@@ -61,55 +61,68 @@
 
 /* Coding Challenge 3 */
 
-// Test 1
+// // Test 1
 
-let dolphinsScores = [96, 108, 89];
-let koalasScores = [88, 91, 110];
+// let dolphinsScores = [96, 108, 89];
+// let koalasScores = [88, 91, 110];
 
-let dolphinsAvg = calculateAvg(dolphinsScores);
-let koalasAvg = calculateAvg(koalasScores);
+// let dolphinsAvg = calculateAvg(dolphinsScores);
+// let koalasAvg = calculateAvg(koalasScores);
 
-determineWinner(dolphinsAvg, koalasAvg);
+// determineWinner(dolphinsAvg, koalasAvg);
 
-// Test 2
+// // Test 2
 
-dolphinsScores = [97, 112, 101];
-koalasScores = [109, 95, 123];
+// dolphinsScores = [97, 112, 101];
+// koalasScores = [109, 95, 123];
 
-dolphinsAvg = calculateAvg(dolphinsScores);
-koalasAvg = calculateAvg(koalasScores);
+// dolphinsAvg = calculateAvg(dolphinsScores);
+// koalasAvg = calculateAvg(koalasScores);
 
-determineWinner(dolphinsAvg, koalasAvg);
+// determineWinner(dolphinsAvg, koalasAvg);
 
-// Test 3
+// // Test 3
 
-dolphinsScores = [97, 112, 101];
-koalasScores = [109, 95, 106];
+// dolphinsScores = [97, 112, 101];
+// koalasScores = [109, 95, 106];
 
-dolphinsAvg = calculateAvg(dolphinsScores);
-koalasAvg = calculateAvg(koalasScores);
+// dolphinsAvg = calculateAvg(dolphinsScores);
+// koalasAvg = calculateAvg(koalasScores);
 
-determineWinner(dolphinsAvg, koalasAvg);
+// determineWinner(dolphinsAvg, koalasAvg);
 
-// Functions
+// // Functions
 
-function calculateAvg(scores) {
+// function calculateAvg(scores) {
 
-    let sum = 0;
+//     let sum = 0;
 
-    scores.forEach(function (score) {
-        sum += score;
-    });
+//     scores.forEach(function (score) {
+//         sum += score;
+//     });
 
-    return sum / scores.length;
-}
+//     return sum / scores.length;
+// }
 
-function determineWinner(dolphinsAvg, koalasAvg) {
-    if (dolphinsAvg > 100 && dolphinsAvg > koalasAvg) console.log(`The Dolphins win!`);
+// function determineWinner(dolphinsAvg, koalasAvg) {
+//     if (dolphinsAvg > 100 && dolphinsAvg > koalasAvg) console.log(`The Dolphins win!`);
 
-    else if (koalasAvg > 100 && koalasAvg > dolphinsAvg) console.log(`The Koalas win!`);
+//     else if (koalasAvg > 100 && koalasAvg > dolphinsAvg) console.log(`The Koalas win!`);
 
-    else if (dolphinsAvg > 100 && koalasAvg > 100 && koalasAvg === dolphinsAvg) console.log(`The Dolphins and Koalas tied!`);
+//     else if (dolphinsAvg > 100 && koalasAvg > 100 && koalasAvg === dolphinsAvg) console.log(`The Dolphins and Koalas tied!`);
 
-    else console.log(`Neither team won.`);
-}
+//     else console.log(`Neither team won.`);
+// }
+
+
+/* Coding Challenge 4 */
+
+// 1.
+
+// prompt returns a string, so I convert it to a number
+const bill = Number(prompt(`Enter bill value:`));
+const tip = bill >= 50 && bill <= 300 ? (bill * 0.15) : (bill * 0.20);
+
+// 2.
+
+console.log(`The bill was $${bill}, the tip was $${tip}, and the total value was $${bill + tip}.`);
