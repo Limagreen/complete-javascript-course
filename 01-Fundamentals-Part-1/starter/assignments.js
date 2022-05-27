@@ -103,20 +103,35 @@
 
 /* Assignment 8: Equality Operators == vs. === */
 
-// 1.
-const numNeighbors = prompt(`How many neighbor countries does your country have?`);
+// // 1.
+// const numNeighbors = prompt(`How many neighbor countries does your country have?`);
 
-// 2.
-if (numNeighbors == 1) console.log(`(Loose) Only 1 border!`);
+// // 2.
+// if (numNeighbors == 1) console.log(`(Loose) Only 1 border!`);
 
-// 3.
-else if (numNeighbors >= 1) console.log(`More than 1 border.`);
+// // 3.
+// else if (numNeighbors > 1) console.log(`More than 1 border.`);
 
-// 4.
-else console.log(`No borders.`);
+// // 4.
+// else console.log(`No borders.`);
 
-// 6. 
-if (numNeighbors === 1) console.log(`(Strict) Only 1 border!`);
+// // 6. 
+// if (numNeighbors === 1) console.log(`(Strict) Only 1 border!`);
 
-// 7.
-if (Number(numNeighbors) === 1) console.log(`(Strict, Manual Conversion) Only 1 border!`);
+// // 7.
+// if (Number(numNeighbors) === 1) console.log(`(Strict, Manual Conversion) Only 1 border!`);
+
+
+/* Assignment 9: Logical Operators */
+
+// 3. and 4.
+
+// based on the United States
+const country = `United States`;
+const speaksEnglish = true;
+const lessThan50Mil = false;
+const isIsland = false;
+
+if (speaksEnglish && lessThan50Mil && !isIsland) console.log(`You should live in ${country} :)`);
+
+else console.log(`${country} does not meet your criteria :(`);
