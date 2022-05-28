@@ -179,18 +179,45 @@
 
 // 1. 
 
-function describeCountry(country, population, capitalCity) {
-    return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+// function describeCountry(country, population, capitalCity) {
+//     return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+// }
+
+// // 2.
+
+// const country1 = describeCountry("The United States", "330", "Washington D.C.");
+// const country2 = describeCountry("Finland", "6", "Helsinki");
+// const country3 = describeCountry("Mexico", "10000", "Mexico City");
+
+// console.log(country1);
+// console.log(country2);
+// console.log(country3);
+
+
+/* Assignment 13: Function Declarations vs. Expressions */
+
+// 1.
+
+function percentageOfWorld1(population) {
+    return (population / 7900) * 100;
 }
 
-// 2.
+// 3.
 
-const country1 = describeCountry("The United States", "330", "Washington D.C.");
-const country2 = describeCountry("Finland", "6", "Helsinki");
-const country3 = describeCountry("Mexico", "10000", "Mexico City");
+const country1 = `(Declaration) The United States' population is ${percentageOfWorld1(330)}% of the world.`;
+const country2 = `(Declaration) China's population is ${percentageOfWorld1(1441)}% of the world.`;
+const country3 = `(Declaration) Finland's population is ${percentageOfWorld1(330)}% of the world.`;
 
 console.log(country1);
 console.log(country2);
 console.log(country3);
 
-/* Assignment 13: Function Declarations vs. Expressions */
+// 4.
+
+const percentageOfWorld2 = function (population) {
+    return (population / 7900) * 100;
+}
+
+console.log(`(Expression) The United States' population is ${percentageOfWorld2(330)}% of the world.`);
+console.log(`(Expression) China's population is ${percentageOfWorld2(1441)}% of the world.`);
+console.log(`(Expression) Finland's population is ${percentageOfWorld2(6)}% of the world.`);
