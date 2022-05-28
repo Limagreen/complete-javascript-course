@@ -1,3 +1,5 @@
+"use strict";
+
 /* Assignment 1: Values and Variables */
 
 // // create variables
@@ -85,7 +87,7 @@
 /* Assignment 7: Type Conversion and Coercion */
 
 // 1. Predictions
-/* 
+/*
 '9' - '5' == 4;
 '19' - '13' + '17' == '617';
 '19' - '13' + 17 == 23;
@@ -115,7 +117,7 @@
 // // 4.
 // else console.log(`No borders.`);
 
-// // 6. 
+// // 6.
 // if (numNeighbors === 1) console.log(`(Strict) Only 1 border!`);
 
 // // 7.
@@ -167,8 +169,28 @@
 
 /* Assignment 11: The Conditional (Ternary) Operator */
 
-const country = "United States";
-const population = 330149796;
+// const country = "United States";
+// const population = 330149796;
 
-population > 33000000 ? console.log(`${country}' population is above average.`) : console.log(`${country}'s population is below average.`);
+// population > 33000000 ? console.log(`${country}' population is above average.`) : console.log(`${country}'s population is below average.`);
 
+
+/* Assignment 12: Functions */
+
+// 1. 
+
+function describeCountry(country, population, capitalCity) {
+    return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
+}
+
+// 2.
+
+const country1 = describeCountry("The United States", "330", "Washington D.C.");
+const country2 = describeCountry("Finland", "6", "Helsinki");
+const country3 = describeCountry("Mexico", "10000", "Mexico City");
+
+console.log(country1);
+console.log(country2);
+console.log(country3);
+
+/* Assignment 13: Function Declarations vs. Expressions */
