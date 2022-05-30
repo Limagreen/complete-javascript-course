@@ -263,3 +263,28 @@
 // function percentageOfWorld(population) {
 //     return (population / 7900) * 100;
 // }
+
+
+/* Assignment 5: Introduction to Arrays */
+
+// 1.
+
+const populations = [330, 1441, 6, 36];
+
+// 2.
+
+if (populations.length == 4) console.log(`Array has 4 elements`);
+
+// 3.
+
+const percentages = [percentageOfWorld(330), percentageOfWorld(1441), percentageOfWorld(6), percentageOfWorld(36)];
+
+console.log(percentages[0] + `%`);
+console.log(percentages[1] + `%`);
+console.log(percentages[2] + `%`);
+console.log(percentages[3] + `%`);
+
+function percentageOfWorld(population) {
+    return (population / 7900) * 100;
+}
+
