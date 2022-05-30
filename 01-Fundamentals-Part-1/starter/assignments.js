@@ -291,27 +291,27 @@
 
 /* Assignment 6: Basic Array Operations (Methods) */
 
-// 1.
+// // 1.
 
-const neighbors = [`Canada`, `Mexico`];
+// const neighbors = [`Canada`, `Mexico`];
 
-// 2.
+// // 2.
 
-neighbors.push(`Utopia`);
-console.log(neighbors);
+// neighbors.push(`Utopia`);
+// console.log(neighbors);
 
-// 3.
+// // 3.
 
-neighbors.pop();
-console.log(neighbors);
+// neighbors.pop();
+// console.log(neighbors);
 
-//  4.
+// //  4.
 
-if (!neighbors.includes(`Germany`)) console.log(`Probably not a central European country :D`);
+// if (!neighbors.includes(`Germany`)) console.log(`Probably not a central European country :D`);
 
-// 5.
+// // 5.
 
-const index = neighbors.indexOf(`Mexico`);
+// const index = neighbors.indexOf(`Mexico`);
 
-neighbors[index] = `Canadia`;
-console.log(neighbors);
+// neighbors[index] = `Canadia`;
+// console.log(neighbors);
