@@ -232,12 +232,34 @@
 
 /* Assignment 3: Arrow Functions */
 
-const percentageOfWorld3 = population => (population / 7900) * 100;
+// const percentageOfWorld3 = population => (population / 7900) * 100;
 
-const country1 = `The United States' population is ${percentageOfWorld3(330)}% of the world.`;
-const country2 = `China's population is ${percentageOfWorld3(1441)}% of the world.`;
-const country3 = `Finland's population is ${percentageOfWorld3(6)}% of the world.`;
+// const country1 = `The United States' population is ${percentageOfWorld3(330)}% of the world.`;
+// const country2 = `China's population is ${percentageOfWorld3(1441)}% of the world.`;
+// const country3 = `Finland's population is ${percentageOfWorld3(6)}% of the world.`;
 
-console.log(country1);
-console.log(country2);
-console.log(country3);
+// console.log(country1);
+// console.log(country2);
+// console.log(country3);
+
+
+/* Assignment 4: Functions Calling Other Functions */
+
+// 3.
+
+console.log(describePopulation(`The United States`, 330));
+console.log(describePopulation(`China`, 1441));
+console.log(describePopulation(`Finland`, 6));
+
+
+// 1.
+
+function describePopulation(country, population) {
+    return `${country} has ${population} million people, which is is ${percentageOfWorld(population)}% of the world.`;
+}
+
+// 2.
+
+function percentageOfWorld(population) {
+    return (population / 7900) * 100;
+}
