@@ -1,5 +1,9 @@
 "use strict";
 
+
+/*** JS Fundamentals Part 2 ***/
+
+
 /* Coding Challenge 1 */
 
 // let markHigherBMI;
@@ -119,12 +123,44 @@
 
 /* Coding Challenge 4 */
 
-// 1.
+// // 1.
 
-// prompt returns a string, so I convert it to a number
-const bill = Number(prompt(`Enter bill value:`));
-const tip = bill >= 50 && bill <= 300 ? (bill * 0.15) : (bill * 0.20);
+// // prompt returns a string, so I convert it to a number
+// const bill = Number(prompt(`Enter bill value:`));
+// const tip = bill >= 50 && bill <= 300 ? (bill * 0.15) : (bill * 0.20);
 
-// 2.
+// // 2.
 
-console.log(`The bill was $${bill}, the tip was $${tip}, and the total value was $${bill + tip}.`);
+// console.log(`The bill was $${bill}, the tip was $${tip}, and the total value was $${bill + tip}.`);
+
+
+/*** JS Fundamentals Part 2 ***/
+
+
+/* Coding Challenge 1 */
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+
+const checkWinner = (avgDolphins, avgKoalas) => {
+    if (avgDolphins >= avgKoalas * 2) console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+
+    else if (avgKoalas >= avgDolphins * 2) console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+
+    else console.log(`Neither team won.`);
+}
+
+// Test 1
+
+let avgDolphins = calcAverage(44, 23, 71);
+let avgKoalas = calcAverage(65, 54, 49);
+
+console.log(`(Test 1)`);
+checkWinner(avgDolphins, avgKoalas);
+
+// Test 2
+
+avgDolphins = calcAverage(85, 54, 41);
+avgKoalas = calcAverage(23, 34, 27);
+
+console.log(`(Test 2)`);
+checkWinner(avgDolphins, avgKoalas);

@@ -245,21 +245,21 @@
 
 /* Assignment 4: Functions Calling Other Functions */
 
-// 3.
+// // 3.
 
-console.log(describePopulation(`The United States`, 330));
-console.log(describePopulation(`China`, 1441));
-console.log(describePopulation(`Finland`, 6));
+// console.log(describePopulation(`The United States`, 330));
+// console.log(describePopulation(`China`, 1441));
+// console.log(describePopulation(`Finland`, 6));
 
 
-// 1.
+// // 1.
 
-function describePopulation(country, population) {
-    return `${country} has ${population} million people, which is is ${percentageOfWorld(population)}% of the world.`;
-}
+// function describePopulation(country, population) {
+//     return `${country} has ${population} million people, which is is ${percentageOfWorld(population)}% of the world.`;
+// }
 
-// 2.
+// // 2.
 
-function percentageOfWorld(population) {
-    return (population / 7900) * 100;
-}
+// function percentageOfWorld(population) {
+//     return (population / 7900) * 100;
+// }
