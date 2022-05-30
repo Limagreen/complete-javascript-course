@@ -1,5 +1,9 @@
 "use strict";
 
+
+/*** JS Fundamentals Part 1 ***/
+
+
 /* Assignment 1: Values and Variables */
 
 // // create variables
@@ -175,9 +179,12 @@
 // population > 33000000 ? console.log(`${country}' population is above average.`) : console.log(`${country}'s population is below average.`);
 
 
-/* Assignment 12: Functions */
+/*** JS Fundamentals Part 2 ***/
 
-// 1. 
+
+/* Assignment 1: Functions */
+
+// 1.
 
 // function describeCountry(country, population, capitalCity) {
 //     return `${country} has ${population} million people and its capital city is ${capitalCity}.`;
@@ -194,30 +201,43 @@
 // console.log(country3);
 
 
-/* Assignment 13: Function Declarations vs. Expressions */
+/* Assignment 2: Function Declarations vs. Expressions */
 
-// 1.
+// // 1.
 
-function percentageOfWorld1(population) {
-    return (population / 7900) * 100;
-}
+// function percentageOfWorld1(population) {
+//     return (population / 7900) * 100;
+// }
 
-// 3.
+// // 3.
 
-const country1 = `(Declaration) The United States' population is ${percentageOfWorld1(330)}% of the world.`;
-const country2 = `(Declaration) China's population is ${percentageOfWorld1(1441)}% of the world.`;
-const country3 = `(Declaration) Finland's population is ${percentageOfWorld1(330)}% of the world.`;
+// const country1 = `(Declaration) The United States' population is ${percentageOfWorld1(330)}% of the world.`;
+// const country2 = `(Declaration) China's population is ${percentageOfWorld1(1441)}% of the world.`;
+// const country3 = `(Declaration) Finland's population is ${percentageOfWorld1(330)}% of the world.`;
+
+// console.log(country1);
+// console.log(country2);
+// console.log(country3);
+
+// // 4.
+
+// const percentageOfWorld2 = function (population) {
+//     return (population / 7900) * 100;
+// }
+
+// console.log(`(Expression) The United States' population is ${percentageOfWorld2(330)}% of the world.`);
+// console.log(`(Expression) China's population is ${percentageOfWorld2(1441)}% of the world.`);
+// console.log(`(Expression) Finland's population is ${percentageOfWorld2(6)}% of the world.`);
+
+
+/* Assignment 3: Arrow Functions */
+
+const percentageOfWorld3 = population => (population / 7900) * 100;
+
+const country1 = `The United States' population is ${percentageOfWorld3(330)}% of the world.`;
+const country2 = `China's population is ${percentageOfWorld3(1441)}% of the world.`;
+const country3 = `Finland's population is ${percentageOfWorld3(6)}% of the world.`;
 
 console.log(country1);
 console.log(country2);
 console.log(country3);
-
-// 4.
-
-const percentageOfWorld2 = function (population) {
-    return (population / 7900) * 100;
-}
-
-console.log(`(Expression) The United States' population is ${percentageOfWorld2(330)}% of the world.`);
-console.log(`(Expression) China's population is ${percentageOfWorld2(1441)}% of the world.`);
-console.log(`(Expression) Finland's population is ${percentageOfWorld2(6)}% of the world.`);
