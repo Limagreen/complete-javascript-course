@@ -319,6 +319,23 @@
 
 /* Assignment 7: Introduction to Objects */
 
+// // 1.
+
+// const myCountry = {
+//     country: `The United States`,
+//     capital: `Washington D.C.`,
+//     language: `English`,
+//     population: 330,
+//     neighbors: [`Canada`, `Mexico`],
+// };
+
+// console.log(myCountry);
+
+
+/* Assignment 8: Dot vs. Bracket Notation */
+
+// 1.
+
 const myCountry = {
     country: `The United States`,
     capital: `Washington D.C.`,
@@ -327,4 +344,12 @@ const myCountry = {
     neighbors: [`Canada`, `Mexico`],
 };
 
-console.log(myCountry);
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} countries and a capital called ${myCountry.capital}`);
+
+// 2.
+
+myCountry.population += 2;
+console.log(myCountry.population);
+
+myCountry.population -= 2;
+console.log(myCountry.population);
