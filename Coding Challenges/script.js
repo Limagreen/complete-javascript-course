@@ -179,3 +179,40 @@
 // function calcTip(bill) {
 //     return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.20;
 // }
+
+
+/* Coding Challenge 3 */
+
+const mark = {
+    fullName: `Mark Miller`,
+    mass: 78, // kg
+    height: 1.69, // meters
+
+    calcBMI: function () {
+        // IMPORTANT NOTE: this function CREATES the bmi property and adds it to the object
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi; // challenge asks us to return it as well
+    }
+
+};
+
+const john = {
+    fullName: `John Smith`,
+    mass: 92, // kg
+    height: 1.95, // meters
+
+    calcBMI: function () {
+        // IMPORTANT NOTE: this function CREATES the bmi property and adds it to the object
+        this.bmi = this.mass / (this.height ** 2);
+        return this.bmi; // challenge asks us to return it as well
+    }
+
+};
+
+mark.calcBMI();
+john.calcBMI();
+
+// this is pretty ugly for a ternary operator, but I wanted to practice it
+mark.bmi > john.bmi ?
+    console.log(`${mark.fullName}'s BMI (${mark.bmi}) is higher than ${john.fullName}'s (${john.bmi})!`)
+    : console.log(`${john.fullName}'s BMI (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`);
