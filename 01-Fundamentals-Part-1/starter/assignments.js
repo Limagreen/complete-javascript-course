@@ -315,3 +315,16 @@
 
 // neighbors[index] = `Canadia`;
 // console.log(neighbors);
+
+
+/* Assignment 7: Introduction to Objects */
+
+const myCountry = {
+    country: `The United States`,
+    capital: `Washington D.C.`,
+    language: `English`,
+    population: 330,
+    neighbors: [`Canada`, `Mexico`],
+};
+
+console.log(myCountry);
