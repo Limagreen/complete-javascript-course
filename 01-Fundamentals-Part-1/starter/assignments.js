@@ -417,19 +417,43 @@
 
 /* Assignment 12: Looping Backwards and Nested Loops */
 
+// // 1.
+
+// // the following is a 2D array, with varying row sizes
+// const listOfNeighbors = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+// // 2. 
+
+// for (let i = 0; i < listOfNeighbors.length; i++) {
+
+//     console.log(`*Row ${i}*`);
+
+//     for (let j = 0; j < listOfNeighbors[i].length; j++) {
+//         console.log(`Neighbor: ${listOfNeighbors[i][j]}`);
+//     }
+
+// } // end of outer for
+
+
+/* Assignment 13: The While Loop */
+
 // 1.
 
-// the following is a 2D array, with varying row sizes
-const listOfNeighbors = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+const populations = [330, 1441, 6, 36];
+const percentages = [];
 
-// 2. 
+// 2.
 
-for (let i = 0; i < listOfNeighbors.length; i++) {
+let i = 0;
 
-    console.log(`*Row ${i}*`);
+while (i < populations.length) {
 
-    for (let j = 0; j < listOfNeighbors[i].length; j++) {
-        console.log(`Neighbor: ${listOfNeighbors[i][j]}`);
-    }
+    percentages.push(percentageOfWorld(populations[i]));
+    console.log(percentages[i]);
 
-} // end of outer for
+    i++;
+}
+
+function percentageOfWorld(population) {
+    return (population / 7900) * 100;
+}
