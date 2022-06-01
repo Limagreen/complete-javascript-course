@@ -357,29 +357,35 @@
 
 /* Assignment 9: Object Methods */
 
-// 1. and 3.
+// // 1. and 3.
 
-const myCountry = {
-    country: `The United States`,
-    capital: `Washington D.C.`,
-    language: `English`,
-    population: 330,
-    neighbors: [`Canada`, `Mexico`],
+// const myCountry = {
+//     country: `The United States`,
+//     capital: `Washington D.C.`,
+//     language: `English`,
+//     population: 330,
+//     neighbors: [`Canada`, `Mexico`],
 
-    describe: function () {
-        console.log(`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} countries and a capital called ${this.capital}`);
-    },
+//     describe: function () {
+//         console.log(`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} countries and a capital called ${this.capital}`);
+//     },
 
-    checkIsland: function () {
-        this.neighbors.length <= 0 ? this.isIsland = true : this.isIsland = false;
-    }
-};
+//     checkIsland: function () {
+//         this.neighbors.length <= 0 ? this.isIsland = true : this.isIsland = false;
+//     }
+// };
 
-// 2.
+// // 2.
 
-myCountry.describe();
+// myCountry.describe();
 
-// 3.
+// // 3.
 
-myCountry.checkIsland();
-console.log(myCountry.isIsland);
+// myCountry.checkIsland();
+// console.log(myCountry.isIsland);
+
+
+/* Assignment 10: The For Loop */
+
+for (let i = 0; i <= 50; i++)
+    console.log(`Voter number ${i} is currently voting.`);
