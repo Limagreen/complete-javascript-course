@@ -334,7 +334,30 @@
 
 /* Assignment 8: Dot vs. Bracket Notation */
 
-// 1.
+// // 1.
+
+// const myCountry = {
+//     country: `The United States`,
+//     capital: `Washington D.C.`,
+//     language: `English`,
+//     population: 330,
+//     neighbors: [`Canada`, `Mexico`],
+// };
+
+// console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} countries and a capital called ${myCountry.capital}`);
+
+// // 2.
+
+// myCountry.population += 2;
+// console.log(myCountry.population);
+
+// myCountry.population -= 2;
+// console.log(myCountry.population);
+
+
+/* Assignment 9: Object Methods */
+
+// 1. and 3.
 
 const myCountry = {
     country: `The United States`,
@@ -342,14 +365,21 @@ const myCountry = {
     language: `English`,
     population: 330,
     neighbors: [`Canada`, `Mexico`],
-};
 
-console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbors.length} countries and a capital called ${myCountry.capital}`);
+    describe: function () {
+        console.log(`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbors.length} countries and a capital called ${this.capital}`);
+    },
+
+    checkIsland: function () {
+        this.neighbors.length <= 0 ? this.isIsland = true : this.isIsland = false;
+    }
+};
 
 // 2.
 
-myCountry.population += 2;
-console.log(myCountry.population);
+myCountry.describe();
 
-myCountry.population -= 2;
-console.log(myCountry.population);
+// 3.
+
+myCountry.checkIsland();
+console.log(myCountry.isIsland);
