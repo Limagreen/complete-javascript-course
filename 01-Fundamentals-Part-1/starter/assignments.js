@@ -393,7 +393,6 @@
 
 /* Assignment 11: Looping Arrays, Breaking, and Continuing */
 
-
 // 1.
 
 const populations = [330, 1441, 6, 36];
@@ -414,3 +413,23 @@ function percentageOfWorld(population) {
 for (let i = 0; i < populations.length; i++) {
     console.log(percentages[i]);
 }
+
+
+/* Assignment 12: Looping Backwards and Nested Loops */
+
+// 1.
+
+// the following is a 2D array, with varying row sizes
+const listOfNeighbors = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+// 2. 
+
+for (let i = 0; i < listOfNeighbors.length; i++) {
+
+    console.log(`*Row ${i}*`);
+
+    for (let j = 0; j < listOfNeighbors[i].length; j++) {
+        console.log(`Neighbor: ${listOfNeighbors[i][j]}`);
+    }
+
+} // end of outer for
