@@ -393,26 +393,26 @@
 
 /* Assignment 11: Looping Arrays, Breaking, and Continuing */
 
-// 1.
+// // 1.
 
-const populations = [330, 1441, 6, 36];
+// const populations = [330, 1441, 6, 36];
 
-// 2.
+// // 2.
 
-const percentages = [];
+// const percentages = [];
 
-for (let i = 0; i < populations.length; i++) {
-    percentages.push(percentageOfWorld(populations[i]));
-}
+// for (let i = 0; i < populations.length; i++) {
+//     percentages.push(percentageOfWorld(populations[i]));
+// }
 
-function percentageOfWorld(population) {
-    return (population / 7900) * 100;
-}
+// function percentageOfWorld(population) {
+//     return (population / 7900) * 100;
+// }
 
-// 3.
-for (let i = 0; i < populations.length; i++) {
-    console.log(percentages[i]);
-}
+// // 3.
+// for (let i = 0; i < populations.length; i++) {
+//     console.log(percentages[i]);
+// }
 
 
 /* Assignment 12: Looping Backwards and Nested Loops */
