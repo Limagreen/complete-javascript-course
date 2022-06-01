@@ -387,5 +387,30 @@
 
 /* Assignment 10: The For Loop */
 
-for (let i = 0; i <= 50; i++)
-    console.log(`Voter number ${i} is currently voting.`);
+// for (let i = 0; i <= 50; i++) {
+//     console.log(`Voter number ${i} is currently voting.`);
+// }
+
+/* Assignment 11: Looping Arrays, Breaking, and Continuing */
+
+
+// 1.
+
+const populations = [330, 1441, 6, 36];
+
+// 2.
+
+const percentages = [];
+
+for (let i = 0; i < populations.length; i++) {
+    percentages.push(percentageOfWorld(populations[i]));
+}
+
+function percentageOfWorld(population) {
+    return (population / 7900) * 100;
+}
+
+// 3.
+for (let i = 0; i < populations.length; i++) {
+    console.log(percentages[i]);
+}
