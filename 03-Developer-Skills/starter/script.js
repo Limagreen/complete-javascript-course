@@ -4,9 +4,9 @@
 // PROBLEM:
 /* We work for a company building a smart home thermometer. Our most recent task is this: "Given an array of temperatures of one day, calculate the temperature amplitude. Keep in mind that sometimes there might be a sensor error." */
 
-// given array
-const temperatures1 = [3, -2, -6, -1, `error`, 9, 13, 17, 15, 14, 9, 5];
-const temperatures2 = [3, 5, 1, 9, 0, 5, `error`, 11, 7, 13, 18, -7];
+// given array(s)
+// const temperatures1 = [3, -2, -6, -1, `error`, 9, 13, 17, 15, 14, 9, 5];
+// const temperatures2 = [3, 5, 1, 9, 0, 5, `error`, 11, 7, 13, 18, -7];
 
 // 1. Understanding the problem
 
@@ -71,28 +71,28 @@ const temperatures2 = [3, 5, 1, 9, 0, 5, `error`, 11, 7, 13, 18, -7];
 1. Merge the two arrays (arrayObject.concat(array1, array2, ...) is a pre-built method for merging multiple arrays)
 */
 
-console.log(calcAmplitude(temperatures1, temperatures2));
+// console.log(calcAmplitude(temperatures1, temperatures2));
 
-function calcAmplitude(temperatures1, temperatures2) {
+// function calcAmplitude(temperatures1, temperatures2) {
 
-    // merge the two arrays given
-    const temperatures = temperatures1.concat(temperatures2);
+//     // merge the two arrays given
+//     const temperatures = temperatures1.concat(temperatures2);
 
-    let lowest = temperatures[0];
-    let highest = temperatures[0];
+//     let lowest = temperatures[0];
+//     let highest = temperatures[0];
 
-    // loop through and determine the highest and lowest values in the array
-    for (let i = 1; i < temperatures.length; i++) {
+//     // loop through and determine the highest and lowest values in the array
+//     for (let i = 1; i < temperatures.length; i++) {
 
-        if (typeof temperatures[i] !== "number") continue; // ignore errors
+//         if (typeof temperatures[i] !== "number") continue; // ignore errors
 
-        if (lowest > temperatures[i]) lowest = temperatures[i];
+//         if (lowest > temperatures[i]) lowest = temperatures[i];
 
-        if (highest < temperatures[i]) highest = temperatures[i];
-    }
+//         if (highest < temperatures[i]) highest = temperatures[i];
+//     }
 
-    return highest - lowest; // amplitude is the difference between highest and lowest
-}
+//     return highest - lowest; // amplitude is the difference between highest and lowest
+// }
 
 /******** MY VERSION (Problem 1 Only) ********/
 
@@ -180,3 +180,59 @@ function calcAmplitude(temperatures1, temperatures2) {
 //     }
 
 // } // end of calcAmplitude()
+
+
+/* Debugging with the Console and Breakpoints */
+
+// console.log(celsiusToKelvin());
+
+// // A) Identify the bug -> Our converted value is incorrect
+
+// // B) Find the bug -> prompt() returns a String when we need a Number
+
+// // C) Fix the bug -> Wrap our prompt() call inside a Number() call
+
+// function celsiusToKelvin() {
+
+//     const measurement = {
+//         type: `temp`,
+//         unit: `celsius`,
+//         value: Number(prompt(`Enter the temperature (Degrees Celsius):`))
+//     }
+
+//     return measurement.value + 273;
+// }
+
+
+/* Coding Challenge 1 */
+
+/*
+Given an array of forcasted maximum temperatures, the thermometer displays a string with these temperatures.
+
+Example: [17, 21, 23] will print "...17°C in 1 days...21°C in 2 days...23°C in 3 days..."
+
+Create a function 'printForecast' which takes in an array `arr` and logs a string like the above to the console.
+
+Use the problem-solving framework: Understand the problem and break it up into sub-problems!
+
+TEST DATA 1: [17, 21, 23]
+TEST DATA 2: [12, 5, -5, 0, 4]
+*/
+
+const temps1 = [17, 21, 23];
+const temps2 = [12, 5, -5, 0, 4];
+
+console.log(printForecast(temps1));
+console.log(printForecast(temps2));
+
+
+function printForecast(arr) {
+
+    let message = ``;
+
+    for (let i = 0; i < arr.length; i++) {
+        message += `${arr[i]}°C in ${i + 1} days...`;
+    }
+
+    return message;
+}
