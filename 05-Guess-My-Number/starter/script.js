@@ -46,9 +46,7 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
 
         if (score === 0) document.querySelector(`.message`).textContent = `💥 GAME OVER 💥`;
 
-        else if (guess < secretNumber) document.querySelector(`.message`).textContent = ` 📈 Go higher!`;
-
-        else document.querySelector(`.message`).textContent = ` 📉 Go lower!`;
+        document.querySelector(`.message`).textContent = guess < secretNumber ? ` 📈 Go higher!` : ` 📉 Go lower!`;
 
     }
 });
