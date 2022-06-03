@@ -1,13 +1,13 @@
 'use strict';
 
 // our state variables
-let secretNumber = Math.trunc(Math.random() * 20 + 1);
+let secretNumber = getSecretNumber()
 let score = 20;
 let highScore = 0;
 let hasWon = false;
 
-// both 'btn' and 'check' are their own CSS classes, but 'check' is specific to the button we want
-document.querySelector(`.check`).addEventListener(`click`, function () {
+// Check button functionality
+document.querySelector(`.check`).addEventListener(`click`, function () { // both 'btn' and 'check' are their own CSS classes, but 'check' is specific to the button we want
 
     // if empty, assigns 0 by default
     const guess = Number(document.querySelector(`.guess`).value);
@@ -17,12 +17,12 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
     // the user hasn't input anything
     if (!guess) { // 0 is a falsy value
 
-        document.querySelector(`.message`).textContent = `⛔ No number given!`;
+        setMessage(`⛔ No number given!`);
     }
 
     // if  guess is correct
     else if (guess === secretNumber) {
-        document.querySelector(`.message`).textContent = `🏆 Correct Number! 🏆`;
+        setMessage(`🏆 Correct Number! 🏆`);
 
         hasWon = true; // player won
 
@@ -44,14 +44,14 @@ document.querySelector(`.check`).addEventListener(`click`, function () {
         // decrement the score for a wrong answer
         document.querySelector(`.score`).textContent = --score;
 
-        if (score === 0) document.querySelector(`.message`).textContent = `💥 GAME OVER 💥`;
+        if (score === 0) setMessage(`💥 GAME OVER 💥`);
 
-        document.querySelector(`.message`).textContent = guess < secretNumber ? ` 📈 Go higher!` : ` 📉 Go lower!`;
+        else guess < secretNumber ? setMessage(`📈 Go higher!`) : setMessage(`📉 Go lower!`);
 
     }
 });
 
-
+// Again button functionality
 document.querySelector(`.again`).addEventListener(`click`, function () {
 
     // reset the win condition
@@ -62,10 +62,10 @@ document.querySelector(`.again`).addEventListener(`click`, function () {
     document.querySelector(`.score`).textContent = score;
 
     // create a new secret number
-    secretNumber = Math.trunc(Math.random() * 20 + 1);
+    secretNumber = getSecretNumber();
 
     // reset message
-    document.querySelector(`.message`).textContent = `Start guessing...`;
+    setMessage(`Start guessing...`);
 
     // reset guess box
     document.querySelector(`.guess`).value = ``;
@@ -74,3 +74,15 @@ document.querySelector(`.again`).addEventListener(`click`, function () {
     document.querySelector(`body`).style.backgroundColor = `#222`;
     document.querySelector(`.number`).style.width = `15rem`;
 });
+
+
+// helper function to change the onscreen message
+function setMessage(message) {
+    document.querySelector(`.message`).textContent = message;
+}
+
+
+// helper function to obtain the secret number
+function getSecretNumber() {
+    return Math.trunc(Math.random() * 20 + 1);
+}
