@@ -1,7 +1,7 @@
 'use strict';
 
 
-// [player--#, name--#, score--#, current--#];
+// [player--#, score--#, current--#, name--#];
 const player0 = setupPlayer(0);
 const player1 = setupPlayer(1);
 let player0Active;
@@ -25,8 +25,10 @@ holdBtn.addEventListener(`click`, hold);
 // sets the die image based on the given roll
 function changeDieImage(roll) {
 
-    dieImage.style.display = `inline`;
+    // display the image if it is hidden
+    dieImage.classList.remove(`hidden`);
 
+    // select the proper die image to display
     switch (roll) {
         case 1:
             dieImage.src = `die-1.png`;
@@ -56,32 +58,44 @@ function changeDieImage(roll) {
 function hold() {
 
     player0Active = isActive();
+    let winner = false;
 
     if (player0Active) {
         player0[1].textContent = Number(player0[1].textContent) + Number(player0[2].textContent); // total += current
         player0[2].textContent = `0`; // current = 0
 
-        isWinner(player0);
+        winner = isWinner(player0);
     }
 
     else {
         player1[1].textContent = Number(player1[1].textContent) + Number(player1[2].textContent);
         player1[2].textContent = `0`;
+
+        winner = isWinner(player1);
     }
 
-
-    swapActiveStatus(player0Active);
+    // if no winner, swap the active status
+    if (!winner) swapActiveStatus(player0Active);
 }
 
 function isActive() {
     return player0[0].classList.contains(`player--active`); // determine if player0 is active and don't use '.' operator
 }
 
-// TODO 
+// sets the winner where applicable and ends the game
 function isWinner(player) {
 
-    if (Number(player[3].textContent) >= 100) console.log(`temp`);
+    // if true, make them the winner and disable the roll and hold buttons
+    if (Number(player[1].textContent) >= 100) {
+        player[0].classList.add(`player--winner`);
 
+        dieBtn.disabled = true;
+        holdBtn.disabled = true;
+
+        return true;
+    }
+
+    return false;
 }
 
 // resets the game back to its original state
@@ -106,9 +120,15 @@ function newGame() {
     player1[2].textContent = 0;
 
     // remove die image
-    dieImage.style.display = `none`;
+    dieImage.classList.add(`hidden`);
 
-    // TODO reset winner?
+    // reset winner
+    player0[0].classList.remove(`player--winner`);
+    player1[0].classList.remove(`player--winner`);
+
+    // reset buttons
+    dieBtn.disabled = false;
+    holdBtn.disabled = false;
 }
 
 /*
