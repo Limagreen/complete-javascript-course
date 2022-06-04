@@ -146,7 +146,7 @@ function rollDie() {
     changeDieImage(roll); // update the image
 
     // if roll is 1 transfer 'active' status and reset current score
-    if (roll == 1)
+    if (roll === 1)
         swapActiveStatus(player0Active, currentScoreP0, currentScoreP1);
 
     // update score
