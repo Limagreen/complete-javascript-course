@@ -147,7 +147,7 @@ function rollDie() {
 
     // if roll is 1 transfer 'active' status and reset current score
     if (roll === 1)
-        swapActiveStatus(player0Active, currentScoreP0, currentScoreP1);
+        swapActiveStatus(player0Active);
 
     // update score
     else player0Active ? player0[2].textContent = currentScoreP0 + roll : player1[2].textContent = currentScoreP1 + roll;
@@ -169,21 +169,10 @@ function setupPlayer(i) {
 // swaps active status and score between players
 function swapActiveStatus(player0Active) {
 
-    if (player0Active) {
-        // swap active status
-        player0[0].classList.remove(`player--active`);
-        player1[0].classList.add(`player--active`);
+    // swap active status
+    player0[0].classList.toggle(`player--active`); // toggle() removes class if present; adds class if not present
+    player1[0].classList.toggle(`player--active`);
 
-        // reset active player's current score
-        player0[2].textContent = 0;
-    }
-
-    else {
-        // swap active status
-        player1[0].classList.remove(`player--active`);
-        player0[0].classList.add(`player--active`);
-
-        // reset active player's current score
-        player1[2].textContent = 0;
-    }
+    // reset active player's current score
+    player0Active ? player0[2].textContent = 0 : player1[2].textContent = 0;
 }
