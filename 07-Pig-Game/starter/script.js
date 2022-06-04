@@ -4,6 +4,7 @@
 // [player--#, name--#, score--#, current--#];
 const player0 = setupPlayer(0);
 const player1 = setupPlayer(1);
+let player0Active;
 
 const dieBtn = document.querySelector(`.btn--roll`);
 const holdBtn = document.querySelector(`.btn--hold`);
@@ -23,6 +24,8 @@ holdBtn.addEventListener(`click`, hold);
 
 // sets the die image based on the given roll
 function changeDieImage(roll) {
+
+    dieImage.style.display = `inline`;
 
     switch (roll) {
         case 1:
@@ -52,11 +55,13 @@ function changeDieImage(roll) {
 // add's active player's current score to total and swaps active status
 function hold() {
 
-    const player0Active = player0[0].classList.contains(`player--active`); // determine who is active and don't use '.' operator
+    player0Active = isActive();
 
     if (player0Active) {
-        player0[1].textContent = Number(player0[1].textContent) + Number(player0[2].textContent);
-        player0[2].textContent = `0`;
+        player0[1].textContent = Number(player0[1].textContent) + Number(player0[2].textContent); // total += current
+        player0[2].textContent = `0`; // current = 0
+
+        isWinner(player0);
     }
 
     else {
@@ -65,14 +70,25 @@ function hold() {
     }
 
 
-    swapActiveStatus(player0Active, 0, 0, 0)
+    swapActiveStatus(player0Active);
+}
+
+function isActive() {
+    return player0[0].classList.contains(`player--active`); // determine if player0 is active and don't use '.' operator
+}
+
+// TODO 
+function isWinner(player) {
+
+    if (Number(player[3].textContent) >= 100) console.log(`temp`);
+
 }
 
 // resets the game back to its original state
 function newGame() {
 
     // reset active status
-    const player0Active = player0[0].classList.contains(`player--active`); // determine who is active and don't use '.' operator
+    player0Active = isActive();
 
     // set player0 as the active player if necessary
     if (!player0Active) {
@@ -88,6 +104,11 @@ function newGame() {
     // reset current score
     player0[2].textContent = 0;
     player1[2].textContent = 0;
+
+    // remove die image
+    dieImage.style.display = `none`;
+
+    // TODO reset winner?
 }
 
 /*
@@ -104,9 +125,9 @@ function rollDie() {
 
     changeDieImage(roll); // update the image
 
-    // if roll is 1 transfer 'active' status and current score
+    // if roll is 1 transfer 'active' status and reset current score
     if (roll == 1)
-        swapActiveStatus(player0Active, currentScoreP0, currentScoreP1, roll);
+        swapActiveStatus(player0Active, currentScoreP0, currentScoreP1);
 
     // update score
     else player0Active ? player0[2].textContent = currentScoreP0 + roll : player1[2].textContent = currentScoreP1 + roll;
@@ -117,23 +138,23 @@ function setupPlayer(i) {
 
     let player = [];
 
-    player.push(document.querySelector(`.player--${i}`)); // section (need to find active status)
+    player.push(document.querySelector(`.player--${i}`)); // section (needed to find active status)
     player.push(document.querySelector(`#score--${i}`)); // total score
     player.push(document.querySelector(`#current--${i}`)); // current score
+    player.push(document.querySelector(`.name--${i}`)); // name (needed for win alert)
 
     return player;
 }
 
 // swaps active status and score between players
-function swapActiveStatus(player0Active, currentScoreP0, currentScoreP1, roll) {
+function swapActiveStatus(player0Active) {
 
     if (player0Active) {
         // swap active status
         player0[0].classList.remove(`player--active`);
         player1[0].classList.add(`player--active`);
 
-        // swap scores
-        player1[2].textContent = currentScoreP0 + roll;
+        // reset active player's current score
         player0[2].textContent = 0;
     }
 
@@ -142,8 +163,7 @@ function swapActiveStatus(player0Active, currentScoreP0, currentScoreP1, roll) {
         player1[0].classList.remove(`player--active`);
         player0[0].classList.add(`player--active`);
 
-        // swap scores
-        player0[2].textContent = currentScoreP1 + roll;
+        // reset active player's current score
         player1[2].textContent = 0;
     }
 }
